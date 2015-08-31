@@ -11,7 +11,8 @@ Many people want to check out, what is really happening behind the scenes before
 
 - Signing transaction and pushing it to the server
 
-```assets/js/my-wallet/src/wallet-spender.js
+```sh
+assets/js/my-wallet/src/wallet-spender.js
 ```	
 
 ## Running Locally

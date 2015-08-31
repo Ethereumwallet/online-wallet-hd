@@ -10,7 +10,9 @@ To sum up, you can say that this wallet provides the same amount of security as 
 Many people want to check out, what is really happening behind the scenes before they actually start using a software. Here, we will point out the most important files to quickly verify the security of our software.
 
 - Signing transaction and pushing it to the server
-```assets/js/my-wallet/src/wallet-spender.js```
+
+```assets/js/my-wallet/src/wallet-spender.js
+```	
 
 ## Running Locally
 

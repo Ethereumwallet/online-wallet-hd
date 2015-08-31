@@ -1,0 +1,80 @@
+h5.well.headliner.hidden-xs(translate="ADVANCED_EXPLAIN")
+
+form.form-horizontal(role="form",name="form",novalidate)  
+
+  .form-group
+    .col-sm-12.col-md-6
+      label(translate="REMEMBER_2FA")
+      p.explain.hidden-xs.hidden-sm(translate="REMEMBER_2FA_EXPLAIN")    
+    .col-sm-12.col-md-6.setting-result
+      div(ng-show="processToggleRememberTwoFactor")
+        img(src="img/spinner.gif")
+      div(ng-hide="processToggleRememberTwoFactor")
+        h2.status.incomplete.hidden-xs.hidden-sm(ng-hide="settings.rememberTwoFactor", translate="DISABLED")
+        h2.status.complete.hidden-xs.hidden-sm(ng-show="settings.rememberTwoFactor", translate="ENABLED")
+      .mtl
+        a.button-primary(ng-click="enableRememberTwoFactor()", translate="ENABLE_REMEMBER_2FA", ng-hide="settings.rememberTwoFactor")
+        a.button-primary(ng-click="disableRememberTwoFactor()", translate="DISABLE_REMEMBER_2FA", ng-show="settings.rememberTwoFactor")
+
+  .form-group
+    .col-sm-12.col-md-6
+      label(translate="BLOCK_TOR")
+      p.explain.hidden-xs.hidden-sm(translate="BLOCK_TOR_EXPLAIN")    
+    .col-sm-12.col-md-6.setting-result
+      h2.status.incomplete.hidden-xs.hidden-sm(ng-hide="settings.blockTOR", translate="DISABLED")
+      h2.status.complete.hidden-xs.hidden-sm(ng-show="settings.blockTOR", translate="ENABLED")
+      tor
+
+  .form-group
+    .col-sm-12.col-md-6
+      label(translate="PBKDF2_ITERATIONS")
+      p.explain.hidden-xs.hidden-sm(translate="PBKDF2_ITERATIONS_EXPLAIN")    
+    .col-sm-12.col-md-6.setting-result
+      bc-async-input(ng-model="settings.pbkdf2" validator="validatePbkdf2" is-required on-save="changePbkdf2" action-title="'CHANGE_PBKDF2' | translate")
+
+  .form-group
+    .col-sm-12.col-md-6
+      label(translate="AUTO_LOGOUT")
+      p.explain.hidden-sm.hidden-xs(translate="AUTO_LOGOUT_EXPLAIN") 
+    .col-sm-12.col-md-6.setting-result
+      bc-async-input(ng-model="settings.logoutTimeMinutes" validator="validateLogoutTime" is-required on-save="changeLogoutTime" action-title="'CHANGE_AUTO_LOGOUT' | translate")
+
+  .form-group(ng-class="{'has-error': errors.ipWhitelist}")
+    .col-sm-12.col-md-6
+      label(translate="IP_WHITELIST")
+      p.explain.hidden-xs.hidden-sm(translate="IP_WHITELIST_EXPLAIN")    
+    .col-sm-12.col-md-6.setting-result
+      bc-async-input.long-input(ng-model="settings.ipWhitelist", validator="validateIpWhitelist", on-save="changeIpWhitelist", action-title="'CHANGE_IP_WHITELIST' | translate", error-message="errors.ipWhitelist")
+
+  .form-group
+    .col-sm-12.col-md-6
+      label(translate="API_ACCESS")
+      p.explain.hidden-xs.hidden-sm(translate="API_ACCESS_EXPLAIN")    
+    .col-sm-12.col-md-6
+      setting-toggle(
+        value="settings.apiAccess"
+        toggle="toggleApiAccess()"
+        enable-title="ENABLE_API_ACCESS"
+        disable-title="DISABLE_API_ACCESS"
+      )
+
+  .form-group
+    .col-sm-12.col-md-6
+      label(translate="LOGGING")
+      p.explain.hidden-xs.hidden-sm(translate="LOGGING_EXPLAIN")    
+    .col-sm-12.col-md-6
+      setting-toggle(
+        value="settings.loggingLevel"
+        toggle="toggleLogging()"
+        enable-title="ENABLE_LOGGING"
+        disable-title="DISABLE_LOGGING"
+      )
+
+  .form-group
+    .col-sm-12.col-md-6
+      label(translate="IP_WHITELIST_RESTRICT")
+      p.explain.hidden-xs.hidden-sm(translate="IP_WHITELIST_RESTRICT_EXPLAIN")    
+    .col-sm-12.col-md-6.setting-result
+      h2.status.incomplete.hidden-xs.hidden-sm(ng-hide="settings.restrictToWhitelist", translate="DISABLED")
+      h2.status.complete.hidden-xs.hidden-sm(ng-show="settings.restrictToWhitelist", translate="ENABLED")
+      ip-whitelist-restrict

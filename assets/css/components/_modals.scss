@@ -1,0 +1,260 @@
+.bc-modal {
+  .modal-content { background: $light-grey-alt; box-shadow: 0 5px 1px rgba(0, 0, 0, 0.6); }
+  .modal-dialog { width: 50vw; }
+  .modal-body {
+    background: white;
+    min-height: 100px;
+  }
+  .modal-footer { border-top: 1px solid #e5e5e5; }
+  .bc-modal-header {
+    position: relative;
+    h3 {
+      font-weight: 500;
+      font-size: 2em;
+      margin-top: 10px;
+    }
+    h5 {
+      font-weight: 300;
+      color: darken($ccc, 30%);
+      margin: 5px 0;
+    }
+    img {
+      margin-right: 10px;
+      height: 40px;
+    }
+    .step {
+      position: absolute;
+      top: 8px;
+      right: 0;
+      font-size: 11px;
+      padding-right: 14px;
+    }
+  }
+  input[type="checkbox"] {
+    margin: 0;
+  }
+  .form-group { margin-bottom: 10px; }
+  .form-control {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid $ccc;
+    &:focus {
+      border-color: none;
+      box-shadow: none
+    }
+    &.no-border { border-bottom: none; }
+  }
+  .has-error .border-bottom { border-color: #a94442 !important; }
+  label {
+    font-weight: 400;
+    color: darken($ccc, 45%);
+    font-size: 1.2em;
+  }
+  textarea {
+    border-radius: 3px;
+    border: 1px solid $eee;
+    height: 60px;
+    width: 300px;
+    &:focus {
+      outline: none;
+    }
+  }
+  .total-amounts {
+    display: flex;
+    flex-direction: column;
+  }
+  .amount-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2px 0;
+    p, span {
+      margin: 0;
+      flex: 1;
+      font-size: 14px;
+    }
+    .why-fee {
+      font-size: 11px;
+      margin-left: 10px;
+      font-weight: 100;
+      &:hover {
+        cursor: pointer;
+        &:after {
+          content: 'Fees are given to the miners who verify your transaction on the blockchain';
+          position: absolute;
+          margin-left: 5px;
+          background: darken($blue, 25%);
+          color: white;
+          padding: 5px;
+          border-radius: 3px;
+          min-width: 100px;
+          font-size: 13px;
+          z-index: 1050;
+        }
+      }
+    }
+  }
+
+  button {
+  }
+  .fa-arrows-h {
+    color: $ccc;
+    padding: 0px 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .label {
+    color: $blue;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .usd-amount, .btc-amount {
+    border-bottom: 1px solid $ccc;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .amount-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    label {
+      margin-right: 10px;
+    }
+  }
+  .send-by {
+    list-style-type: none;
+    position: absolute;
+    top: 0px;
+    right: 25px;
+    li {
+      display: inline-block;
+      margin: 0 10px;
+      color: $ccc;
+      &.active {
+        color: $blue;
+        font-weight: 700;
+      }
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+  .to-field, .public-note {
+    position: relative;
+    label {
+      margin-bottom: 15px;
+    }
+  }
+  .btc, .email, .phone {
+    display: flex;
+    flex-direction: column;
+  }
+  .qr-code {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 33px;
+    top: 50px;
+    background: #fdfdfd;
+    border:1px solid #e5e5e5;
+    padding:5px;
+    &:hover {
+      cursor: pointer;
+      background: #efefef;
+    }
+  }
+  .scale {
+    -webkit-animation: scale .6s linear 0s 1;
+    animation: scale .6s linear 0s 1;
+  }
+  .conversion {
+    border-bottom: 1px solid $eee;
+    padding-bottom: 5px;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  ::-webkit-input-placeholder {
+    color: $ccc;
+  }
+
+  .advanced-recipient-row {
+    margin-bottom: 10px;
+    position: relative;
+    border: 1px solid #eee;
+    padding: 1em;
+    .ui-select-container {
+      min-width: 225px;
+      margin-right: 10px;
+    }
+  }
+  .recipient-currency {
+    .form-control {
+      padding: 3px 10px;
+    }
+  }
+  //Specific to the 2FA modal
+  .two-fa-image { width: 40px; }
+  .phone-image { width: 85px; }
+  .ti-lock { font-size: 7.5em; color: #C6C6C6; }
+
+  //Specific to the first login modal
+  .rocket-gif {
+    border-radius: 5px;
+    width: 228px;
+    height: 430px;
+  }
+}
+
+.rocket-modal {
+  background: rgba(10,10,10,.4);
+  .modal-body { padding: 3em; }
+  .rocket-text {
+    padding-left: 3em;
+  }
+}
+
+.terms-modal {
+  .modal-body {
+    max-height: 400px;
+    overflow-y: scroll;
+    padding: 0;
+  }
+  .modal-dialog { width: 65vw; }
+}
+
+@media (max-width: 768px) {
+  .bc-modal {
+    .modal-dialog {
+      width: 95%; /* fallback for browsers without support for vw */
+      width: 95vw;
+      margin: 5vw 2vw;
+    }
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .bc-modal {
+    .modal-dialog {
+      width: 60vw;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "My-Wallet-HD",
+  "version": "0.9.0",
+  "description": "ethereumwallet.org JavaScript Wallet",
+  "homepage": "https://github.com/blockchain/My-Wallet-HD",
+  "bugs": {
+    "url": "https://github.com/blockchain/My-Wallet-HD/issues"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "ethereumwallet.org",
+    "url": "https://ethereumwallet.org"
+  },
+  "contributors": [
+    "Ben Reeves",
+    "Tim Lee",
+    "Mark Pfluger",
+    "Sjors Provoost",
+    "Jaume Pernas"
+  ],
+  "main": "wallet.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blockchain/My-Wallet-HD.git"
+  },
+  "scripts": {
+    "postinstall": "cd node_modules/sjcl && ./configure --with-sha1 && make",
+    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+  },
+  "dependencies": {
+    "bigi": "1.4.*",
+    "bip39": "2.1.*",
+    "bitcoinjs-lib": "1.5.*",
+    "bs58": "2.0.*",
+    "crypto-js": "3.1.4",
+    "ethereumjs-tx": "https://registry.npmjs.org/ethereumjs-tx/-/ethereumjs-tx-0.6.2.tgz",
+    "ethereumjs-util": "^1.3.7",
+    "jquery": "^1.11.1",
+    "node-rsa": "*",
+    "randombytes": "^2.0.1",
+    "request-sync": "*",
+    "rsvp": "^3.0.21",
+    "sha3": "^1.1.0",
+    "sjcl": "1.0.*",
+    "sync-request": "*",
+    "unorm": "^1.3.3",
+    "xregexp": "2.0.*"
+  },
+  "devDependencies": {
+    "browserify": "~8.1.1",
+    "browserify-istanbul": "^0.2.1",
+    "bs58check": "^1.0.5",
+    "coffee-script": "~1.8.0",
+    "coffeeify": "^1.0.0",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.6.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-jshint": "^0.11.1",
+    "grunt-contrib-uglify": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-env": "^0.4.4",
+    "grunt-preprocess": "^4.1.0",
+    "grunt-shell": "^1.1.2",
+    "grunt-shrinkwrap": "^0.1.1",
+    "grunt-text-replace": "^0.4.0",
+    "jasmine-core": "^2.2.0",
+    "karma": "~0.12.31",
+    "karma-browserify": "^4.1.2",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-coffee-preprocessor": "~0.2.1",
+    "karma-coverage": "0.2.6",
+    "karma-jasmine": "~0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "proxyquireify": "^2.0.0",
+    "shelljs": "^0.3.0"
+  }
+}

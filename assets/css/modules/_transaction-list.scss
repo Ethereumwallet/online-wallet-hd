@@ -1,0 +1,219 @@
+.transactions {
+  .transaction-feed {
+    position: relative;
+    top: 50px;
+  }
+  .ui-select-highlight {
+   background: #D3E7D5;
+   font-weight: 400;
+  }
+  a.date { padding-top: 10px; }
+  .transaction {
+    border-bottom: 1pt solid $light-grey;
+    padding: 15px 30px;
+    position: relative;
+    &:hover { background: $hover-blue; }
+    .timestamp{
+      color: rgb(190, 190, 190);
+      font-style: italic;
+    }
+    .type {
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    .feed-info {
+      width: 120px;
+    }
+    .action {
+      font-weight: 500;
+      font-size: 1.3em;
+    }
+    .action.incoming_tx{
+    color: #85B45B;
+    }
+    .action.outgoing_tx{
+     color: #E27E82;
+    }
+    .action.local_tx{
+     color: #5BACD0;
+    }
+    .destination{
+      display: block;
+      font-size: 1.1em;
+    }
+    .amount {
+      padding: 10px 0;
+      position: absolute;
+      right: 10px;
+      top: 18px;
+      button.amount{
+        font-size: 1.1em;
+        min-width: 125px;
+        float: right;
+      }
+    }
+    .tx-toggle {
+      position: absolute;
+      top: 62.5px;
+      transform: translateY(-50%);
+    }
+    .tx-details {
+      margin-left: 3em;
+    }
+  }
+  .description {
+    color: #828181;
+  }
+  .feed-details {
+    border-top: 1px solid $eee;
+  }
+}
+
+.transaction-card {
+  background-color: $light-grey-alt;
+  border: 1px solid $eee;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 780px;
+  margin: 10px auto;
+  font-size: 1.1em;
+  .tx-date{
+    border-bottom: 1px solid #DCDCDC;
+    padding: 0 0px 15px 0;
+    margin-bottom: 15px;
+    color: #6C6C6C;
+    font-size: 1.1em;
+  }
+  .tx-details{
+    div{
+      margin-bottom: 20px;
+    }
+    p{
+      margin: 0 10px 0px 0;
+      font-weight: 600;
+      color: #777777;
+    }
+    strong{
+      display: inline;
+      font-weight: 400;
+      word-break: break-all;
+    }
+  }
+  .tx-sidebar{
+    border-left: 1px solid #DCDCDC;
+  }
+  .tx-status{
+    font-weight: 600;
+    color: rgb(4, 155, 212);
+    padding: 15px 0px;
+  }
+  .tx-notes{
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #E5E5E5;
+    i{margin-right: 5px;}
+
+  }
+  .tx-amount{
+    span{float: none;}
+  }
+  .tx-value{
+    text-align: center;
+    margin-bottom: 10px;
+    p{font-size: .9em; margin: 0; color: darkgrey;}
+    span{font-weight: bold; font-size: 1.3em;}
+
+  }
+  button.amount{padding: 10px;height: auto;width: 100%;}
+  span.you{opacity: .5; font-style: italic;padding-right: 5px;}
+}
+
+button.amount {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+}
+
+button {
+  &.intra-wallet  { background: $transfer-blue; }
+  &.spent { background: $send-red; }
+  &.received {
+    background: $receive-green;
+    span.glyphicon {
+      padding-left: 10px;
+    }
+    &:hover {
+      color:white;
+    }
+  }
+}
+.unconfirmed { opacity: 0.5; }
+
+.note { color: #aeaeae; }
+
+a.date,p.date { color: #adc0c9; }
+
+.amountTotal{ float: none;}
+
+.from, .to{
+  padding: 5px 0;
+  strong{
+    span{
+    font-weight: normal;
+    }
+    span.result{
+    padding: 5px 0;
+    font-weight: bold;
+    display: block;
+    overflow-wrap: break-word;
+  }
+  }
+}
+
+@media (min-width: 992px){
+  .amountTotal{float: right;}
+}
+
+@media(max-width: 902px) {
+  .tx-bci-link {
+    font-size: .8em;
+  }
+}
+
+@media (min-width: 768px){
+  .transaction-details {
+    .status{text-align: right;}
+  }
+}
+
+@media(max-width: 767px) {
+  .transaction-card {
+    top: 0;
+    .tx-sidebar, .tx-details {
+      width: 100%;
+    }
+  }
+  .transactions .row.transaction div.amount button.amount {
+    min-width: 121px;
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 620px) {
+  .transactions {
+    top: 0;
+    .transaction {
+      .tx-details { margin-left: 0; }
+    }
+  }
+  .tx-bci-link {
+    font-size: 0.4em;
+    width: 85px;
+  }
+  .transaction-card {
+    button.amount { font-size: .75em; }
+    .helper { display: none; }
+  }
+}

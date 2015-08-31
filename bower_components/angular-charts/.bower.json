@@ -1,0 +1,41 @@
+{
+  "name": "angular-charts",
+  "authors": [
+    "chinmaymk"
+  ],
+  "description": "angular directives for common charts using d3",
+  "keywords": [
+    "d3",
+    "charts",
+    "angular",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "main": [
+    "./dist/angular-charts.js"
+  ],
+  "dependencies": {
+    "d3": "~3.3.10",
+    "angular": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.16"
+  },
+  "homepage": "https://github.com/abhisharma2/angular-charts",
+  "_release": "4f546b3d87",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4f546b3d87d0c2772669296a92a1ff93608e2bb4"
+  },
+  "_source": "git://github.com/abhisharma2/angular-charts.git",
+  "_target": "master",
+  "_originalSource": "abhisharma2/angular-charts"
+}

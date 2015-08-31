@@ -1,0 +1,42 @@
+.notification-modal {
+  .modal-dialog {
+    width: 40vw;
+  }
+  .modal-content {
+    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  .notification-modal {
+    .modal-dialog {
+      width: 100vw;
+    }
+  }
+}
+
+.message {
+  position: absolute;
+  right: 0px;
+  z-index: 1049; //above everything except modals (1050)
+}
+
+.message-beacon {
+  width: 20px;
+  height: 20px;
+  z-index: 1049; //keep this the highest on the z-axis
+  border-radius: 100%;
+  background: $send-red;
+  animation: pulse 3s linear infinite;
+}
+.message-contextual {
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid $aaa;
+  position: absolute;
+  z-index: 1048;
+  text-transform: none !important;
+  //scoped CSS (refactor)
+  a.button-success-alt { color: white; }
+  a.aaa { color: $aaa; }
+}

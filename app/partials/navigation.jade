@@ -1,0 +1,35 @@
+.navbar.navbar-default.navbar-fixed-top.navbar-inverse.bc-header(role='navigation')
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type="button", ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
+        span.sr-only Toggle navigation
+        span.ti-angle-down.white
+      a.pull-left#wallet-nav-toggle(title="Wallet Navigation Menu", ng-click="toggleMenu()")
+        span.ti-menu.white
+      a.navbar-brand(ng-click="visitTransactions()") 
+        img#logo(src="img/logo-updated.png",alt="Blockchain")
+    .navbar-collapse.collapse(ng-class="{'in' : !navCollapsed}", ng-click="navCollapsed=true")
+      ul.nav.navbar-nav.navbar-right(ng-show="status.isLoggedIn")
+        li.item.mrl(ng-show="settings.btcCurrency")
+          a.flex-important.flex-column(ng-click="openBCmarkets()")
+            span.type-sm
+              | 1 {{ settings.btcCurrency.code }} =&nbsp;
+              fiat(btc="settings.btcCurrency.conversion")
+        li.dropdown.item.hidden-xs(dropdown)
+          a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-expanded="false" dropdown-toggle)
+            span(translate="EXPLORE")
+            i.ti-angle-down.mlm
+          ul.dropdown-menu(role='menu')
+            li
+              a(href="https://www.ethereum.org", target="_blank", translate="WHATS_BITCOIN")
+            li
+              a(href="https://www.ethereumwallet.org/", target="_blank", translate="BLOCKCHAIN_INFO")
+            li
+              a(href="https://www.poloniex.com/", target="_blank", translate="MARKETS")
+        li.item.visible-xs
+          a(href="https://www.ethereumwallet.org/wallet/bitcoin-faq", target="_blank",translate="WHATS_BITCOIN")
+        li.item.visible-xs
+          a(href="https://www.ethereumwallet.org/", target="_blank",translate="BLOCKCHAIN_INFO")
+        li.item
+          a(ng-click="logout()", translate="SIGNOUT")
+    // /.nav-collapse

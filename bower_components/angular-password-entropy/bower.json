@@ -1,0 +1,29 @@
+{
+  "name": "angular-password-entropy",
+  "version": "0.1.4",
+  "homepage": "https://github.com/pernas/angular-password-entropy",
+  "authors": [
+    "Jaume Pernas <jaume@pernas.cat>"
+  ],
+  "description": "angularjs directive to create an entropy bar for a password",
+  "main": "password-entropy.min.js",
+  "keywords": [
+    "angularjs",
+    "password",
+    "entropy",
+    "directive",
+    "coffeescript"
+  ],
+  "license": "UNLICENSE",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.0"
+  }
+}

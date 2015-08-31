@@ -1,0 +1,10 @@
+/bower_components/
+/node_modules/
+/lib/jasmine/
+/lib/jasmine-jquery/
+/lib/jquery/
+/.bower_cache/
+/.sass-cache/
+/.grunt/
+/tmp/
+.DS_Store

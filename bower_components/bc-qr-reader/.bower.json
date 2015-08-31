@@ -1,0 +1,40 @@
+{
+  "name": "bc-qr-reader",
+  "authors": [
+    "Sjors Provoost <sjors@blockchain.com>"
+  ],
+  "description": "QR Code reader for AngularJS, powered by Lazarsoft QR parser.",
+  "main": "dist/bc-qr-reader.js",
+  "keywords": [
+    "QR"
+  ],
+  "license": "",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blockchain/bc-qr-reader.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "webcam-directive": "~3.0.0"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/blockchain/bc-qr-reader",
+  "version": "0.1.3",
+  "_release": "0.1.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.3",
+    "commit": "ad031a84d2b2daff93c5a588a099a3ee11ecec75"
+  },
+  "_source": "git://github.com/blockchain/bc-qr-reader.git",
+  "_target": "0.1.*",
+  "_originalSource": "bc-qr-reader"
+}

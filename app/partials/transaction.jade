@@ -1,0 +1,37 @@
+.transaction-details
+  .row.phl
+    .col-xs-12
+      a.back(ng-click="back()")
+        h4.back(translate="BACK_TO_FEED")
+  .transaction-card.flex-column.flex
+    .tx-date
+      span.em-600.prm(translate="TRANSACTION_DETAILS")
+      span {{ transaction.txTime * 1000 | date:'MMMM d @ hh:mm a' }}
+    .flex
+      .tx-details.pal.flex-3
+        .tx-sender
+          p(translate="FROM")
+          strong {{ from }}
+        .tx-receiver
+          p(translate="TO")
+          ul.pln.flex-column.flex.type-sm
+            li.flex-center.mbm(ng-repeat="destination in destinations")
+              span.text-overflow-hidden.flex-1.flex
+                | {{ destination.address }}
+                span.plm {{ destination.you }}
+              span.plm.center-align {{ destination.amount }}
+        .tx-notes
+          p(translate="NOTES")
+          transaction-note(transaction="transaction")
+      .tx-sidebar.pal.flex-1
+        .tx-amount
+          amount(transaction="transaction" btc)
+        .tx-value-now.tx-value
+          p(translate="VALUE_NOW")
+          fiat(btc="transaction.result" abs)
+        .tx-bci-link.button-default.button-sm
+          a.black(ng-href="http://www.etherchain.org/tx/{{ transaction.hash }}", target="_blank")
+           span(translate="VERIFY_ON_BCI")
+  .transaction-card.clearfix(ng-if="transaction.publicNote")
+    strong(translate="PUBLIC_NOTE")
+    p.mtl {{ transaction.publicNote }}

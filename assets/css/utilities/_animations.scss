@@ -1,0 +1,262 @@
+////////////////////////////////
+//modal collapse and come back//
+////////////////////////////////
+
+@-webkit-keyframes scale {
+  10% { -webkit-transform: scale(.9); }
+  30% { -webkit-transform: scale(.8); }
+  50% { -webkit-transform: scale(.65); }
+  70% { -webkit-transform: scale(.8); }
+  90% { -webkit-transform: scale(.9); }
+  100% { -webkit-transform: scale(1); }
+}
+@keyframes scale {
+  10% { transform: scale(.9); }
+  30% { transform: scale(.8); }
+  50% { transform: scale(.65); }
+  70% { transform: scale(.8); }
+  90% { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+
+.scale {
+  animation: scale .4s;
+}
+
+//speed up fade in animation
+
+.fade {
+  -webkit-transition: opacity 0.05s linear;
+  -o-transition: opacity 0.05s linear;
+  transition: opacity 0.05s linear;
+}
+
+///////////////////////////////////
+//Fade in & out animations/////////
+///////////////////////////////////
+
+@-webkit-keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fade-in-right {
+  -webkit-animation-name: fade-in-right;
+  animation-name: fade-in-right;
+}
+
+@-webkit-keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fade-in-down {
+  -webkit-animation-name: fade-in-down;
+  animation-name: fade-in-down;
+}
+
+////////////////////////////////////
+/////Zooming in out animations//////
+////////////////////////////////////
+
+@-webkit-keyframes zoom-out {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes zoom-out {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.zoom-out {
+  -webkit-animation-name: zoom-out;
+  animation-name: zoom-out;
+}
+
+//////////////////////////////////////////
+/////////                         ///////
+///*** SECURITY CENTER ANIMATIONS ***////
+////////                        ////////
+////////////////////////////////////////
+
+@-webkit-keyframes image-fade {
+  0% {
+    opacity: .3;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes image-fade {
+  0% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.level-incomplete-container.ng-hide-add {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  display: block !important;
+  -webkit-transition: all .5s linear !important;
+  transition: all .5s linear !important;
+}
+
+.level-incomplete-container.ng-hide-add.ng-hide-add-active {
+  -webkit-animation: image-fade 1s ease-in-out;
+  animation: image-fade 1s ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+// level complete animation
+.level-complete-animation {
+  display: none !important;
+}
+.level-complete-animation.ng-hide-remove {
+  opacity: 0;
+  display: block !important;
+  -webkit-transition: all 2s linear .9s !important;
+  transition: all 2s linear .9s !important;
+}
+.level-complete-animation.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+
+// after animation done, bring back full image
+.level-complete-container.ng-hide-remove {
+  opacity: 0;
+  display: block !important;
+  -webkit-transition: opacity .5s linear 3.2s !important;
+  transition: opacity .5s linear 3.2s !important;
+}
+.level-complete-container.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+// progress bar animation
+.progress-bar-wrapper.ng-hide-add {
+  display: block !important;
+  -webkit-transition: all .5s linear 1s !important;
+  transition: all .5s linear 1s !important;
+}
+
+.progress-bar-wrapper.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+
+
+///////////////////////////////////////////
+/////////                    //////////////
+////****** SEND ANIMATIONs ******* ////////
+////////                    ///////////////
+//////////////////////////////////////////
+
+/* Initial state when showing */
+.bc-modal-fade.ng-hide-remove {
+  opacity: 0;
+  display: block !important;
+  -webkit-transition: linear .4s all !important;
+  transition: linear .4s all !important;
+}
+
+/* Will transition towards this state */
+.bc-modal-fade.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+
+///////////////////////////////////////////
+/////////                    //////////////
+////****** MESSAGE ANIMATIONs ******* /////
+////////                    ///////////////
+//////////////////////////////////////////
+
+$pulse-color-1: #E47F7F;
+$pulse-color-2: #E8A1A1;
+$pulse-color-3: #F0D3D4;
+
+@keyframes pulse {
+  0% { box-shadow: none;}
+  25% { box-shadow: 0 0 0 6px $pulse-color-2; }
+  50% { box-shadow: 0 0 0 12px $pulse-color-3; }
+  75% { box-shadow: 0 0 0 6px $pulse-color-2; }
+  100% { box-shadow: none;}
+}

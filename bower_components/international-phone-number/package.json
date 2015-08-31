@@ -1,0 +1,31 @@
+{
+  "name": "international-phone-number",
+  "version": "0.0.1",
+  "description": "AngularJS directive for intl-tel-input jQuery plugin",
+  "keywords": [
+    "international",
+    "i18n",
+    "country",
+    "dial",
+    "code",
+    "telephone",
+    "mobile",
+    "input",
+    "flag",
+    "directive",
+    "angular",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "author": "Marek Pietrucha (http://enginearch.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mareczek/international-phone-number.git"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-build-lifecycle": "^0.1.1",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-uglify": "^0.9.1"
+  }
+}

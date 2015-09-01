@@ -1,6 +1,6 @@
 # Ethereum Wallet HD Frontend 
 
-An AngularJS ethereum web wallet which runs entirely in the browser eliminating any risk.
+An AngularJS [ethereum web wallet](https://ethereumwallet.org/) which runs entirely in the browser eliminating any risk.
 As the cryptographic operations are run entirely local (inside your webbrowser) there is no chance an attacker could siphon your password or your private keys. Your secret data is at no point transmitted to our webserver. The only communication that takes place with our server is to push an already signed transaction and to store an encrypted version of your wallet (that again can only be decoded using your password).
 
 To sum up, you can say that this wallet provides the same amount of security as a local full node.

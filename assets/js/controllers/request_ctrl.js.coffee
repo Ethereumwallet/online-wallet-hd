@@ -82,7 +82,7 @@ walletApp.controller "RequestCtrl", ($scope, Wallet, $modalInstance, $log, desti
         $scope.setPaymentRequestURL($scope.receiveAddress, $scope.fields.amount)
 
   $scope.setPaymentRequestURL = (address, amount) ->
-    $scope.paymentRequestAddress = address
+    $scope.paymentRequestAddress = '0x' + address
     $scope.paymentRequestURL = "ethereum:" + address
     if amount > 0
       $scope.paymentRequestURL += "?amount=" + parseFloat(amount / 1000000000000000000)
